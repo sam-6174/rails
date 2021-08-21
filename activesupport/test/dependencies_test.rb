@@ -1,20 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "abstract_unit"
-require "pp"
 require "active_support/dependencies"
-
-module ModuleWithMissing
-  mattr_accessor :missing_count
-  def self.const_missing(name)
-    self.missing_count += 1
-    name
-  end
-end
-
-module ModuleWithConstant
-  InheritedConstant = "Hello"
-end
 
 class RequireDependencyTest < ActiveSupport::TestCase
   setup do
