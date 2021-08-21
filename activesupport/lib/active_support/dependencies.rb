@@ -62,9 +62,6 @@ module ActiveSupport # :nodoc:
     # cleared.
     mattr_accessor :autoloaded_constants, default: []
 
-    def clear
-    end
-
     # Is the provided constant path defined?
     def qualified_const_defined?(path)
       Object.const_defined?(path, false)
